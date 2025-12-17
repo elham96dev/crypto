@@ -1,6 +1,6 @@
 
 import 'package:crypto_app/constant/color_constants.dart';
-import 'package:crypto_app/views/costom_crypto_column.dart';
+import 'package:crypto_app/widgets/custom_crypto_column.dart';
 // ignore: unused_import
 import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:flutter/material.dart';
@@ -69,12 +69,12 @@ class CryptoCard extends StatelessWidget {
                   title: "Low Day",
                   price: lowDay,
                 ),
-            ],
-          ),
-                      ],
-                    ),
+        ],
+      ),
+    ],
+),
+),
         ),
-            ),
-          );
-  }
+      );
+}
 }

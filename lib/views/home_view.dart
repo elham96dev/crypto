@@ -1,6 +1,6 @@
 
 import 'package:crypto_app/constant/color_constants.dart';
-import 'package:crypto_app/views/crypto_card.dart';
+import 'package:crypto_app/widgets/crypto_card.dart';
 import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -105,6 +105,24 @@ class _HomeViewState extends State<HomeView> {
                 activeDotColor: Colors.white,
                 dotColor: gray3
               ),
+            ),
+              SizedBox(
+                height: 52,
+              ),
+              Text(
+                "Crypto",
+                style: TextStyle(
+                  color: gray10,
+                  fontFamily: "crypto",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 38,
+                ),
+              ),
+              Divider(
+                color: gray10,
+                indent: 12,
+                endIndent: 12,
+                thickness: 1,
               )
             ],
           ),
