@@ -1,6 +1,7 @@
 
 import 'package:crypto_app/constant/color_constants.dart';
 import 'package:crypto_app/widgets/crypto_card.dart';
+import 'package:crypto_app/widgets/crypto_listtile.dart';
 import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -60,76 +61,96 @@ class _HomeViewState extends State<HomeView> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 220,
-              width: 420,
-              child: PageView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 220,
+                width: 420,
+                child: PageView(
+                  controller: pageController,
+                  children: [
+                CryptoCard(
+                  icon: CryptoFontIcons.BTC,
+                  title: "BTC",
+                  openDay: 24300.0,
+                  highDay: 22400.0,
+                  lowDay: 21100.0,
+                  ),
+                CryptoCard(
+                  icon: CryptoFontIcons.USDT,
+                  title: "USDT",
+                  openDay: 24300.0,
+                  highDay: 22400.0,
+                  lowDay: 21100.0,
+                  ),
+                CryptoCard(
+                  icon: CryptoFontIcons.ETH,
+                  title: "ETH",
+                  openDay: 24300.0,
+                  highDay: 22400.0,
+                  lowDay: 21100.0,
+                  ),
+                ],
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+               SmoothPageIndicator(
                 controller: pageController,
-                children: [
-              CryptoCard(
-                icon: CryptoFontIcons.BTC,
-                title: "BTC",
-                openDay: 24300.0,
-                highDay: 22400.0,
-                lowDay: 21100.0,
+                count: 3,
+                effect: WormEffect(
+                  activeDotColor: Colors.white,
+                  dotColor: gray3
                 ),
-              CryptoCard(
-                icon: CryptoFontIcons.USDT,
-                title: "USDT",
-                openDay: 24300.0,
-                highDay: 22400.0,
-                lowDay: 21100.0,
+              ),
+                SizedBox(
+                  height: 52,
                 ),
-              CryptoCard(
-                icon: CryptoFontIcons.ETH,
-                title: "ETH",
-                openDay: 24300.0,
-                highDay: 22400.0,
-                lowDay: 21100.0,
+                Text(
+                  "Crypto",
+                  style: TextStyle(
+                    color: gray10,
+                    fontFamily: "crypto",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 38,
+                  ),
+                ),
+                Divider(
+                  color: gray10,
+                  indent: 12,
+                  endIndent: 12,
+                  thickness: 1,
+                ),
+                CryptoListTile(
+                 title: "BTC",
+                 price: 20122 ,
+                 medianPrice: 20122,
+                ),
+                CryptoListTile(
+                 title: "USDT",
+                 price: 20122 ,
+                 medianPrice: 20122,
+                ),
+                CryptoListTile(
+                 title: "ETH",
+                 price: 20122 ,
+                 medianPrice: 20122,
                 ),
               ],
-              ),
             ),
-            SizedBox(
-              height: 5,
-            ),
-             SmoothPageIndicator(
-              controller: pageController,
-              count: 3,
-              effect: WormEffect(
-                activeDotColor: Colors.white,
-                dotColor: gray3
-              ),
-            ),
-              SizedBox(
-                height: 52,
-              ),
-              Text(
-                "Crypto",
-                style: TextStyle(
-                  color: gray10,
-                  fontFamily: "crypto",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 38,
-                ),
-              ),
-              Divider(
-                color: gray10,
-                indent: 12,
-                endIndent: 12,
-                thickness: 1,
-              )
-            ],
-          ),
+        ),
       ),
 );
 }
 }
+
+
 
 
 
